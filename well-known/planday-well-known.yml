@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://id.planday.com/.well-known/openid-configuration
+host: https://id.planday.com
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: planday-openid-configuration.json
+notes: 'Planday''s OAuth2/OIDC authorization server (id.planday.com) publishes a full
+  OpenID Connect discovery document, including token/authorization endpoints, supported
+  grant types, and the complete scopes_supported list. No security.txt, oauth-authorization-server,
+  api-catalog, or ai-plugin.json was found on id.planday.com, openapi.planday.com,
+  or www.planday.com (all 404).'
+probed:
+- {host: https://id.planday.com, path: /.well-known/openid-configuration, status: 200}
+- {host: https://openapi.planday.com, path: /.well-known/security.txt, status: 404}
+- {host: https://openapi.planday.com, path: /.well-known/openid-configuration, status: 404}
+- {host: https://openapi.planday.com, path: /.well-known/ai-plugin.json, status: 404}
+- {host: https://openapi.planday.com, path: /.well-known/api-catalog, status: 404}
+- {host: https://www.planday.com, path: /.well-known/security.txt, status: 404}

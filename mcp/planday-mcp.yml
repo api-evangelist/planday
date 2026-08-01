@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: 'Derived from documented Planday API domains (openapi.planday.com) and the
+  OAuth2 scopes_supported in id.planday.com OIDC discovery. No official Planday MCP
+  server was found in registries or docs.'
+server:
+  name: planday
+  transport: http
+  url: null
+notes: 'Candidate tool surface. Planday publishes no OpenAPI spec file (docs are HTML
+  pages), so tools are derived from documented domains and read/write scopes rather
+  than concrete operationIds. Verify against the live API reference before implementing.'
+tools:
+- {name: list_employees, description: List employees, scope: 'employee:read'}
+- {name: get_employee, description: Get an employee by id, scope: 'employee:read'}
+- {name: create_employee, description: Create an employee, scope: 'employee:create'}
+- {name: update_employee, description: Update an employee, scope: 'employee:update'}
+- {name: list_departments, description: List departments, scope: 'department:read'}
+- {name: list_employee_groups, description: List employee groups, scope: 'employeegroup:read'}
+- {name: list_shifts, description: List scheduled shifts, scope: 'shift:read'}
+- {name: create_shift, description: Create a shift, scope: 'shift:create'}
+- {name: update_shift, description: Update a shift, scope: 'shift:update'}
+- {name: delete_shift, description: Delete a shift, scope: 'shift:delete'}
+- {name: list_shift_types, description: List shift types, scope: 'shifttype:read'}
+- {name: read_time_and_cost, description: Read time and cost for shifts, scope: 'timeandcost:read'}
+- {name: list_punchclock_shifts, description: List punch clock shift entries, scope: 'punchclockshift:read'}
+- {name: list_absences, description: List absence records, scope: 'absence:read'}
+- {name: create_absence, description: Create an absence record, scope: 'absence:create'}
+- {name: read_revenue, description: Read revenue data, scope: 'revenue:read'}
+- {name: set_revenue, description: Set revenue data, scope: 'revenue:set'}
+- {name: read_payroll, description: Read payroll reporting data, scope: 'payroll:read'}
+- {name: read_pay_rates, description: Read employee pay rates, scope: 'payrates:read'}
+- {name: read_salaries, description: Read employee salaries, scope: 'salaries:read'}
+- {name: read_contract_rules, description: Read employee contract rules, scope: 'contractrules:read'}
+- {name: read_security_group_membership, description: Read security group membership, scope: 'securitygroupmembership:read'}

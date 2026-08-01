@@ -1,0 +1,99 @@
+generated: '2026-07-20'
+method: searched
+source: https://id.planday.com/.well-known/openid-configuration
+docs: https://openapi.planday.com/gettingstarted/authorization-flow/
+notes: 'Scopes captured verbatim from the OpenID Connect discovery document''s
+  scopes_supported array. Scopes must be selected when an app is created in Planday
+  (Settings -> API access -> Create app); new scopes cannot be added after creation.
+  Descriptions are derived from the resource:action scope naming convention.'
+schemes:
+- name: OAuth2
+  type: oauth2
+  source: https://id.planday.com/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://id.planday.com/connect/authorize
+    tokenUrl: https://id.planday.com/connect/token
+  - flow: clientCredentials
+    tokenUrl: https://id.planday.com/connect/token
+  - flow: refreshToken
+    tokenUrl: https://id.planday.com/connect/token
+scopes:
+- {scope: openid, description: OpenID Connect authentication}
+- {scope: plandayid, description: Planday identity claim}
+- {scope: email, description: Access the user email claim}
+- {scope: offline_access, description: Issue a refresh token for long-lived access}
+- {scope: 'employee:read', description: Read employee details}
+- {scope: 'employee:create', description: Create employees}
+- {scope: 'employee:update', description: Update employee details}
+- {scope: 'employee:deactivate', description: Deactivate employees}
+- {scope: 'employee:history', description: Read employee history}
+- {scope: 'employeetype:read', description: Read employee types}
+- {scope: 'employeegroup:read', description: Read employee groups}
+- {scope: 'employeegroup:create', description: Create employee groups}
+- {scope: 'employeegroup:update', description: Update employee groups}
+- {scope: 'employeegroup:delete', description: Delete employee groups}
+- {scope: 'department:read', description: Read departments}
+- {scope: 'department:create', description: Create departments}
+- {scope: 'department:update', description: Update departments}
+- {scope: 'department:delete', description: Delete departments}
+- {scope: 'skill:read', description: Read skills}
+- {scope: 'skill:create', description: Create skills}
+- {scope: 'skill:update', description: Update skills}
+- {scope: 'skill:delete', description: Delete skills}
+- {scope: 'bankaccount:read', description: Read employee bank account details}
+- {scope: 'bankaccount:create', description: Create employee bank account details}
+- {scope: 'bankaccount:update', description: Update employee bank account details}
+- {scope: 'birthdate:read', description: Read employee birthdate}
+- {scope: 'birthdate:create', description: Set employee birthdate}
+- {scope: 'birthdate:update', description: Update employee birthdate}
+- {scope: 'ssn:read', description: Read employee social security number}
+- {scope: 'ssn:create', description: Set employee social security number}
+- {scope: 'ssn:update', description: Update employee social security number}
+- {scope: 'shift:read', description: Read scheduled shifts}
+- {scope: 'shift:create', description: Create shifts}
+- {scope: 'shift:update', description: Update shifts}
+- {scope: 'shift:delete', description: Delete shifts}
+- {scope: 'shifttype:read', description: Read shift types}
+- {scope: 'shifttype:create', description: Create shift types}
+- {scope: 'shifttype:delete', description: Delete shift types}
+- {scope: 'shiftposition:read', description: Read shift positions}
+- {scope: 'shiftposition:create', description: Create shift positions}
+- {scope: 'shiftposition:update', description: Update shift positions}
+- {scope: 'shiftposition:delete', description: Delete shift positions}
+- {scope: 'timeandcost:read', description: Read time and cost data for shifts}
+- {scope: 'punchclockshift:read', description: Read punch clock shift entries}
+- {scope: 'punchclockshift:create', description: Create punch clock shift entries}
+- {scope: 'punchclockkioskdevice:read', description: Read punch clock kiosk devices}
+- {scope: 'punchclockkioskdevice:create', description: Create punch clock kiosk devices}
+- {scope: 'punchclockkioskdevice:delete', description: Delete punch clock kiosk devices}
+- {scope: 'punchclockkioskprofile:read', description: Read punch clock kiosk profiles}
+- {scope: 'punchclockkioskprofile:create', description: Create punch clock kiosk profiles}
+- {scope: 'absence:read', description: Read absence records}
+- {scope: 'absence:create', description: Create absence records}
+- {scope: 'absence:update', description: Update absence records}
+- {scope: 'absencesettings:read', description: Read absence settings}
+- {scope: 'absencesettings:create', description: Create absence settings}
+- {scope: 'absencesettings:update', description: Update absence settings}
+- {scope: 'absencesettings:delete', description: Delete absence settings}
+- {scope: 'revenue:read', description: Read revenue data}
+- {scope: 'revenue:set', description: Set revenue data}
+- {scope: 'revenue:update', description: Update revenue data}
+- {scope: 'revenue:delete', description: Delete revenue data}
+- {scope: 'payroll:read', description: Read payroll reporting data}
+- {scope: 'payrates:read', description: Read employee pay rates}
+- {scope: 'payrates:update', description: Update employee pay rates}
+- {scope: 'salaries:read', description: Read employee salaries}
+- {scope: 'salaries:update', description: Update employee salaries}
+- {scope: 'contractrules:read', description: Read employee contract rules}
+- {scope: 'contractrules:update', description: Update employee contract rules}
+- {scope: 'portal:create', description: Create portal connection details}
+- {scope: 'securitygroups:read', description: Read security groups}
+- {scope: 'securitygroupmembership:read', description: Read security group membership}
+- {scope: 'securitygroupmembership:update', description: Update security group membership}
+- {scope: 'securitygroupmembership:delete', description: Delete security group membership}
+- {scope: 'datacenter:read', description: Read data center details}
+- {scope: 'datacenter:create', description: Create data center details}
+- {scope: platform_access_token, description: Issue a platform access token}
+- {scope: access_token, description: Issue an access token}
+- {scope: impersonate, description: Impersonate a user (privileged)}

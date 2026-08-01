@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://openapi.planday.com/gettingstarted/overview/
+authentication:
+  style: oauth2-bearer
+  detail: 'OAuth2 bearer token in the Authorization header, plus an X-ClientId header
+    carrying the registered app id.'
+  ref: authentication/planday-authentication.yml
+content_type:
+  request: application/json
+  response: application/json
+  note: All request and response data must be in JSON.
+pagination:
+  style: offset-limit
+  default_page_size: 50
+  max_page_size: 50
+  note: 'Most endpoints come with pagination and return a max of 50 records per page.'
+versioning:
+  style: uri-path
+  pattern: /{domain}/v{version}/...
+  ref: lifecycle/planday-lifecycle.yml
+idempotency:
+  supported: false
+  note: No idempotency-key header or mechanism is documented by Planday.
+request_id:
+  supported: unknown
+rate_limit_signaling:
+  documented: false
+  note: No rate-limit headers or quotas are documented on the developer portal.
+error_envelope:
+  documented: false
+  note: No formal error-envelope/problem+json schema published in the developer docs.
+domains:
+- HR
+- Absence
+- Pay
+- Payroll
+- Portal
+- Punchclock
+- Reports
+- Revenue
+- Schedule
+- Contract Rules
+- Security Group Membership

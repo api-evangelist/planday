@@ -1,7 +1,19 @@
 aid: planday
 name: Planday
-description: 'Planday is a company surfaced as a portfolio company of creandum and added to the API Evangelist
-  network as a stub for enrichment. Sector: saas. This profile is a lead awaiting the enrichment pipeline.'
+description: 'Planday is a workforce management platform for shift-based businesses in hospitality, retail, healthcare, hotels, entertainment, and fitness, offering employee scheduling, time tracking and punch clock, absence and leave management, payroll reporting, staff communication, and HR. Planday (part of Xero) publishes a public REST/OAuth2 developer API at openapi.planday.com, organized into domains such as HR, Absence, Pay, Payroll, Portal, Punchclock, Reports, Revenue, Schedule, Contract Rules, and Security Group Membership, so partners and customers can sync employees, shifts, timesheets, pay rates, and cost data with external systems.'
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.planday.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/planday/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,13 +23,94 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-- Saas
-apis: []
+- SaaS
+- Workforce Management
+- Scheduling
+- Time Tracking
+- Payroll
+- Human Resources
+- Hospitality
+- Retail
+- REST
+- OAuth2
+apis:
+- name: Planday API
+  description: 'Planday''s REST API secured by OAuth2 bearer tokens, separated into
+    domains (HR, Absence, Pay, Payroll, Portal, Punchclock, Reports, Revenue, Schedule,
+    Contract Rules, Security Group Membership). Requests and responses are JSON; most
+    list endpoints paginate at 50 records per page. Calls require an Authorization
+    bearer token plus the app''s X-ClientId header.'
+  humanURL: https://openapi.planday.com/
+  baseURL: https://openapi.planday.com
+  tags:
+  - Workforce Management
+  - Scheduling
+  - HR
+  - Payroll
+  properties:
+  - type: Documentation
+    url: https://openapi.planday.com/gettingstarted/overview/
+  - type: APIReference
+    url: https://openapi.planday.com/api/absence/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/planday-domain-security.yml
+- type: DeveloperPortal
+  url: https://openapi.planday.com/
+- type: Documentation
+  url: https://openapi.planday.com/gettingstarted/overview/
+- type: APIReference
+  url: https://openapi.planday.com/api/absence/
+- type: GettingStarted
+  url: https://openapi.planday.com/gettingstarted/overview/
+- type: Support
+  url: https://help.planday.com/
+- type: HelpCenter
+  url: https://support.planday.com/
+- type: Blog
+  url: https://www.planday.com/resources/articles/
+- type: StatusPage
+  url: https://status.planday.com/
+- type: Pricing
+  url: https://www.planday.com/pricing/
+- type: SignUp
+  url: https://signup.planday.com/
+- type: Login
+  url: https://id.planday.com/findCompanyUrl
+- type: TermsOfService
+  url: https://www.planday.com/legal/
+- type: PrivacyPolicy
+  url: https://www.planday.com/legal/
+- type: WellKnown
+  url: well-known/planday-well-known.yml
+- type: Authentication
+  url: authentication/planday-authentication.yml
+- type: OAuthScopes
+  url: scopes/planday-scopes.yml
+- type: Conformance
+  url: conformance/planday-conformance.yml
+- type: Compliance
+  url: https://www.planday.com/
+- type: Lifecycle
+  url: lifecycle/planday-lifecycle.yml
+- type: Conventions
+  url: conventions/planday-conventions.yml
+- type: DataModel
+  url: data-model/planday-data-model.yml
+- type: MCPServer
+  url: mcp/planday-mcp.yml
+- type: LLMsTxt
+  url: llms/planday-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

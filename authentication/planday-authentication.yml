@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: searched
+source: https://id.planday.com/.well-known/openid-configuration
+docs: https://openapi.planday.com/gettingstarted/authorization-flow/
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode, clientCredentials, refreshToken]
+  token_endpoint: https://id.planday.com/connect/token
+  authorization_endpoint: https://id.planday.com/connect/authorize
+  access_token_ttl_seconds: 3600
+  refresh_token: non-expiring (until revoked or lost)
+  additional_header: 'X-ClientId: <app id> is required on API calls alongside the bearer token'
+schemes:
+- name: OAuth2
+  type: oauth2
+  scheme: bearer
+  description: 'Access to the Planday API is secured by a standard OAuth2 flow with a
+    bearer token. Apps are registered in the portal (Settings -> API access) with a
+    fixed set of scopes. Access tokens expire after 1 hour; a non-expiring refresh
+    token is used to obtain new access tokens.'
+  source: https://id.planday.com/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://id.planday.com/connect/authorize
+    tokenUrl: https://id.planday.com/connect/token
+    scope_count: 76
+  - flow: clientCredentials
+    tokenUrl: https://id.planday.com/connect/token
+  - flow: refreshToken
+    tokenUrl: https://id.planday.com/connect/token
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://id.planday.com/.well-known/openid-configuration
+  source: https://id.planday.com/.well-known/openid-configuration
+grant_types_supported:
+- authorization_code
+- client_credentials
+- refresh_token
+- implicit
+- password
+- 'urn:ietf:params:oauth:grant-type:device_code'
+- token_exchange

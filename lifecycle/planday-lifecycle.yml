@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://openapi.planday.com/gettingstarted/overview/
+versioning:
+  scheme: uri-path
+  pattern: /{domain}/v{version}/...
+  example: /pay/v1.0/payrates/employeeGroups/{employeeGroupId}
+  docs: https://openapi.planday.com/gettingstarted/overview/
+status_page: https://status.planday.com/
+deprecation:
+  policy_url: null
+  sunset_header: null
+  notes: No formal deprecation/Sunset-header policy located in the developer docs.
+sla:
+  url: null
+  notes: No public SLA/uptime target published on the developer portal.
+deprecated_operations: []

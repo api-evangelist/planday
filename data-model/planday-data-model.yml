@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: derived
+source: 'Derived from documented Planday API domains and the OAuth2 resource scopes
+  (id.planday.com OIDC discovery). No OpenAPI spec is published, so entity fields and
+  relationship cardinalities are inferred from the domain/scope model and should be
+  verified against the live API reference.'
+entities:
+- {name: Employee, domain: HR, scopes: ['employee:read', 'employee:create', 'employee:update']}
+- {name: EmployeeGroup, domain: HR, scopes: ['employeegroup:read']}
+- {name: EmployeeType, domain: HR, scopes: ['employeetype:read']}
+- {name: Department, domain: HR, scopes: ['department:read']}
+- {name: Skill, domain: HR, scopes: ['skill:read']}
+- {name: Shift, domain: Schedule, scopes: ['shift:read', 'shift:create']}
+- {name: ShiftType, domain: Schedule, scopes: ['shifttype:read']}
+- {name: ShiftPosition, domain: Schedule, scopes: ['shiftposition:read']}
+- {name: PunchclockShift, domain: Punchclock, scopes: ['punchclockshift:read']}
+- {name: PunchclockKioskDevice, domain: Punchclock, scopes: ['punchclockkioskdevice:read']}
+- {name: Absence, domain: Absence, scopes: ['absence:read', 'absence:create']}
+- {name: AbsenceSettings, domain: Absence, scopes: ['absencesettings:read']}
+- {name: Revenue, domain: Revenue, scopes: ['revenue:read']}
+- {name: PayRate, domain: Pay, scopes: ['payrates:read']}
+- {name: Salary, domain: Pay, scopes: ['salaries:read']}
+- {name: ContractRules, domain: Contract Rules, scopes: ['contractrules:read']}
+- {name: SecurityGroup, domain: Security, scopes: ['securitygroups:read']}
+- {name: SecurityGroupMembership, domain: Security, scopes: ['securitygroupmembership:read']}
+relationships:
+- {from: Employee, to: EmployeeGroup, type: has_many, via: employeeGroups}
+- {from: Employee, to: Department, type: has_many, via: departments}
+- {from: Employee, to: Skill, type: has_many, via: skills}
+- {from: Employee, to: EmployeeType, type: belongs_to, via: employeeTypeId}
+- {from: Shift, to: Employee, type: belongs_to, via: employeeId}
+- {from: Shift, to: Department, type: belongs_to, via: departmentId}
+- {from: Shift, to: ShiftType, type: belongs_to, via: shiftTypeId}
+- {from: Shift, to: ShiftPosition, type: belongs_to, via: positionId}
+- {from: PunchclockShift, to: Shift, type: belongs_to, via: shiftId}
+- {from: Absence, to: Employee, type: belongs_to, via: employeeId}
+- {from: PayRate, to: EmployeeGroup, type: belongs_to, via: employeeGroupId}
+- {from: Salary, to: Employee, type: belongs_to, via: employeeId}
+- {from: ContractRules, to: Employee, type: belongs_to, via: employeeId}
+- {from: SecurityGroupMembership, to: SecurityGroup, type: belongs_to, via: securityGroupId}
+- {from: SecurityGroupMembership, to: Employee, type: belongs_to, via: employeeId}

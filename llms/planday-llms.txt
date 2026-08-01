@@ -1,0 +1,33 @@
+# Planday
+
+> Planday (part of Xero) is a workforce management platform for shift-based businesses in hospitality, retail, healthcare, hotels, entertainment, and fitness. Its public REST API, secured by OAuth2 bearer tokens, is organized into domains — HR, Absence, Pay, Payroll, Portal, Punchclock, Reports, Revenue, Schedule, Contract Rules, and Security Group Membership — for syncing employees, shifts, timesheets, pay rates, and cost data with external systems.
+
+## APIs
+
+- [Planday API](https://openapi.planday.com/): REST/JSON API. Base host https://openapi.planday.com, paths of the form /{domain}/v{version}/... Auth via OAuth2 bearer token plus X-ClientId header. Most list endpoints paginate at 50 records/page.
+
+## Authentication
+
+- [Authorization flow](https://openapi.planday.com/gettingstarted/authorization-flow/): OAuth2. Token endpoint https://id.planday.com/connect/token, authorize endpoint https://id.planday.com/connect/authorize. Access tokens expire after 1 hour; refresh tokens are non-expiring.
+- [OpenID discovery](https://id.planday.com/.well-known/openid-configuration): full OIDC metadata and the complete scopes_supported list (resource:action scopes such as employee:read, shift:create, absence:update).
+
+## Docs
+
+- [Getting started overview](https://openapi.planday.com/gettingstarted/overview/)
+- [HR guide](https://openapi.planday.com/guides/hr-guide/)
+- [Absence API](https://openapi.planday.com/api/absence/)
+
+## Artifacts
+
+- [Scopes](https://raw.githubusercontent.com/api-evangelist/planday/refs/heads/main/scopes/planday-scopes.yml)
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/planday/refs/heads/main/authentication/planday-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/planday/refs/heads/main/conventions/planday-conventions.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/planday/refs/heads/main/data-model/planday-data-model.yml)
+
+## Resources
+
+- [Developer portal](https://openapi.planday.com/)
+- [Status page](https://status.planday.com/)
+- [Help center](https://help.planday.com/)
+- [Pricing](https://www.planday.com/pricing/)
+- [Sign up](https://signup.planday.com/)
