@@ -1,6 +1,17 @@
 aid: planday
 name: Planday
 description: 'Planday is a workforce management platform for shift-based businesses in hospitality, retail, healthcare, hotels, entertainment, and fitness, offering employee scheduling, time tracking and punch clock, absence and leave management, payroll reporting, staff communication, and HR. Planday (part of Xero) publishes a public REST/OAuth2 developer API at openapi.planday.com, organized into domains such as HR, Absence, Pay, Payroll, Portal, Punchclock, Reports, Revenue, Schedule, Contract Rules, and Security Group Membership, so partners and customers can sync employees, shifts, timesheets, pay rates, and cost data with external systems.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
