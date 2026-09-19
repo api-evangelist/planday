@@ -71,6 +71,11 @@ apis:
   tags:
   - Workforce Management
   - Scheduling
+  - Human Resources
+  - Payroll
+  tags_raw:
+  - Workforce Management
+  - Scheduling
   - HR
   - Payroll
   properties:
